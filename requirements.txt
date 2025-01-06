@@ -1,0 +1,7 @@
+pandas
+numpy
+hmmlearn
+scikit-learn
+openpyxl
+
+-e .
