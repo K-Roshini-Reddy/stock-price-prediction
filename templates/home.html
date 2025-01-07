@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Close Price Prediction</title>
+</head>
+<body>
+    <h1>Stock Close Price Viewer</h1>
+    <form action="{{ url_for('predict_data') }}" method="post">
+        <div>
+            <label for="stock_name">Select Stock Name:</label>
+            <select id="stock_name" name="stock_name" required>
+                <option disabled selected value="">-- Select a Stock --</option>
+                {% for stock in stock_names %}
+                <option value="{{ stock }}">{{ stock }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div>
+            <button type="submit">Get Close Price</button>
+        </div>
+    </form>
+
+    {% if message %}
+    <h2>{{ message }}</h2>
+    {% endif %}
+</body>
+</html>

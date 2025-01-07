@@ -3,5 +3,6 @@ numpy
 hmmlearn
 scikit-learn
 openpyxl
-
+dill
+Flask
 -e .
